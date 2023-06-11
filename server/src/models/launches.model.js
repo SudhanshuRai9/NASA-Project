@@ -1,6 +1,6 @@
 const launches = new Map();
 
-// let latestFlightNumber = 100;
+let latestFlightNumber = 100;
 
 const launch = {
     flightNumber: 100,
@@ -20,21 +20,22 @@ launches.set(launch.flightNumber, launch);
 // }
 
 function getAllLaunches() {
+    // launches.values is converted to array-like object bcoz arrays and objects are valid json in js
     return Array.from(launches.values());
 }
 
-// function addNewLaunch(launch) {
-//     latestFlightNumber++;
-//     launches.set(
-//         latestFlightNumber, 
-//         Object.assign(launch, {
-//             success: true,
-//             upcoming: true,
-//             customers: ['Zero to Mastery', 'NASA'],
-//             flightNumber: latestFlightNumber,
-//         })
-//     );
-// }
+function addNewLaunch(launch) {
+    latestFlightNumber++;
+    launches.set(
+        latestFlightNumber, 
+        Object.assign(launch, {
+            success: true,
+            upcoming: true,
+            customers: ['Zero to Mastery', 'NASA'],
+            flightNumber: latestFlightNumber,
+        })
+    );
+}
 
 // function abortLaunchWithId(launchId) {
 //     const aborted = launches.get(launchId);
@@ -46,6 +47,6 @@ function getAllLaunches() {
 module.exports = {
     // existsLaunchWithId,
     getAllLaunches,
-    // addNewLaunch,
+    addNewLaunch,
     // abortLaunchWithId,
 };
