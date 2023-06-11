@@ -19,9 +19,9 @@ launches.set(launch.flightNumber, launch);
 //     return launches.has(launchId);
 // }
 
-// function getAllLaunches() {
-//     return Array.from(launches.values());
-// }
+function getAllLaunches() {
+    return Array.from(launches.values());
+}
 
 // function addNewLaunch(launch) {
 //     latestFlightNumber++;
@@ -44,9 +44,8 @@ launches.set(launch.flightNumber, launch);
 // }
 
 module.exports = {
-    launches,
     // existsLaunchWithId,
-    // getAllLaunches,
+    getAllLaunches,
     // addNewLaunch,
     // abortLaunchWithId,
 };
